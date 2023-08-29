@@ -1,103 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link href="./styles.css" rel="stylesheet">
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <style>
-      @keyframes typing {
-        from {
-          width: 0;
-        }
-        to {
-          width: 100%;
-        }
-      }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link href="./styles.css" rel="stylesheet" />
+        <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+        <style>
+            @keyframes typing {
+                from {
+                    width: 0;
+                }
+                to {
+                    width: 100%;
+                }
+            }
 
-      .animated-text {
-        display: inline-block;
-        overflow: hidden;
-        white-space: nowrap;
-        color: #FFD700; /* Golden yellow color */
-      }
+            .animated-text {
+                display: inline-block;
+                overflow: hidden;
+                white-space: nowrap;
+                color: #ffd700; /* Golden yellow color */
+            }
 
-      .animated-text::after {
-        content: "|";
-        margin-left: 0.1em;
-        animation: typing 3s steps(40, end), blink 0.75s infinite alternate;
-      }
+            .animated-text::after {
+                content: "|";
+                margin-left: 0.1em;
+                animation: typing 3s steps(40, end),
+                    blink 0.75s infinite alternate;
+            }
 
-      @keyframes blink {
-        to {
-          opacity: 0;
-        }
-      }
-    </style>
-  </head>
-  <body class="bg-green-200 relative bg-cover bg-bottom bg-no-repeat" style="background-image: url('Media/blobanimation.svg'); background: linear-gradient(180deg, #1E3D34, #13412B, #0E5621, #007117);">
-    
-  <nav class="bg-green-600 border-gray-200 dark:bg-gray-900 absolute top-0 left-0 right-0 bg-gray-800 text-white p-4">
-    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="index.html" class="flex items-center">
-          <h1>AAK Tech</h1>
-      </a>
-      <button onclick="toggleMobileMenu()" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm bg-green-400 text-yellow-700 rounded-lg md:hidden hover:bg-green-500 hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-          </svg>
-      </button>
-      <div class="hidden w-full md:block md:w-auto mobil" id="navbar-default">
-        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700">
-          <li>
-            <a href="index.html" class="block py-2 pl-3 pr-4 md:p-0 md:text-yellow-300" aria-current="page">Home</a>
-          </li>
-          <li>
-            <a href="about.html" class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0">About</a>
-          </li>
-          <li>
-            <a href="qualifications-experience.html" class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0">Qualifications | Experience</a>
-          </li>
-          <li>
-            <a href="projects.html" class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0">Projects</a>
-          </li>
-          <li>
-            <a href="contact.html" class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+            @keyframes blink {
+                to {
+                    opacity: 0;
+                }
+            }
+        </style>
+    </head>
+    <body
+        class="bg-green-200 relative bg-cover bg-bottom bg-no-repeat"
+        style="
+            background-image: url('Media/blobanimation.svg');
+            background: linear-gradient(
+                180deg,
+                #1e3d34,
+                #13412b,
+                #0e5621,
+                #007117
+            );
+        "
+    >
+        <nav
+            class="bg-green-600 border-gray-200 dark:bg-gray-900 absolute top-0 left-0 right-0 bg-gray-800 text-white p-4"
+        >
+            <div
+                class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+            >
+                <a href="index.html" class="flex items-center">
+                    <h1>AAK Tech</h1>
+                </a>
+                <button
+                    onclick="toggleMobileMenu()"
+                    data-collapse-toggle="navbar-default"
+                    type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm bg-green-400 text-yellow-700 rounded-lg md:hidden hover:bg-green-500 hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-default"
+                    aria-expanded="false"
+                >
+                    <span class="sr-only">Open main menu</span>
+                    <svg
+                        class="w-5 h-5"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 17 14"
+                    >
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15"
+                        />
+                    </svg>
+                </button>
+                <div
+                    class="hidden w-full md:block md:w-auto mobil"
+                    id="navbar-default"
+                >
+                    <ul
+                        class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700"
+                    >
+                        <li>
+                            <a
+                                href="index.html"
+                                class="block py-2 pl-3 pr-4 md:p-0 md:text-yellow-300"
+                                aria-current="page"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="about.html"
+                                class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0"
+                                >About</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="qualifications-experience.html"
+                                class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0"
+                                >Qualifications | Experience</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="projects.html"
+                                class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0"
+                                >Projects</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="contact.html"
+                                class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-
-  <div class="flex items-center justify-evenly min-h-screen">
-    <img
-      src="./Media/Picture_AbdullahAhmad.jpg"
-      alt=""
-      style="border-radius: 100%; border: solid black 5px"
-      width="300px"
-      height="300px"
-      class="m-5 hover:scale-110 transition duration-500 cursor-pointer"
-    />
-    <div>
-      <h1 class="text-4xl font-bold text-white d-block text-center">
-        <span class="animated-text">ABDULLAH AHMAD AAK</span>
-      </h1>
-      <p class="text-xl text-gray-300 d-block text-center">
-        <span class="animated-text">1 man, 1 stop</span>
-      </p>
-    </div>
-  </div>
-    
-
-  </body>
-  <script>
-    const mobileMenu = document.getElementById('navbar-default');
-    const toggleMobileMenu = () => {
-      mobileMenu.classList.toggle('hidden');
-      console.log("hiii ");
-    }
-  </script>
+        <div class="flex items-center justify-evenly min-h-screen">
+            <img
+                src="./Media/Picture_AbdullahAhmad.jpg"
+                alt=""
+                style="border-radius: 100%; border: solid black 5px"
+                width="300px"
+                height="300px"
+                class="m-5 hover:scale-110 transition duration-500 cursor-pointer"
+            />
+            <div>
+                <h1 class="text-4xl font-bold text-white d-block text-center">
+                    <span class="animated-text">ABDULLAH AHMAD AAK</span>
+                </h1>
+                <p class="text-xl text-gray-300 d-block text-center">
+                    <span class="animated-text">1 man, 1 stop</span>
+                </p>
+            </div>
+        </div>
+    </body>
+    <script>
+        const mobileMenu = document.getElementById("navbar-default");
+        const toggleMobileMenu = () => {
+            mobileMenu.classList.toggle("hidden");
+            console.log("hiii ");
+        };
+    </script>
 </html>

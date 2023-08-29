@@ -1,589 +1,1212 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body class="bg-green-200 relative min-h-screen" style="background: linear-gradient(180deg, #1E3D34, #13412B, #0E5621, #007117);">
-    
-    <nav class="bg-green-600 border-gray-200 dark:bg-gray-900 absolute top-0 left-0 right-0 bg-gray-800 text-white p-4">
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="index.html" class="flex items-center">
-            <h1>AAK Tech</h1>
-        </a>
-        <button onclick="toggleMobileMenu()" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm bg-green-400 text-yellow-700 rounded-lg md:hidden hover:bg-green-500 hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-            </svg>
-        </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700">
-            <li>
-              <a href="index.html" class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0">Home</a>
-            </li>
-            <li>
-              <a href="about.html" class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0">About</a>
-            </li>
-            <li>
-              <a href="qualifications-experience.html" class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0">Qualifications | Experience</a>
-            </li>
-            <li>
-              <a href="projects.html" class="block py-2 pl-3 pr-4 md:p-0 md:text-yellow-300" aria-current="page">Projects</a>
-            </li>
-            <li>
-              <a href="contact.html" class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    
-    <!-- Project Choice Modal -->
-    <div id="project-choice-modal" data-modal-backdrop="static" tabindex="-1" aria-hidden="true" class="flex flex-row justify-center items-center fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full mx-auto">
-      <div class="modal-overlay fixed inset-0 bg-black opacity-50"></div>
-      <div class="relative w-full max-w-2xl max-h-full">
-          <!-- Modal content -->
-          <div class="relative rounded-lg shadow dark:bg-gray-700 bg-yellow-400">
-              <!-- Modal header -->
-              <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600" style="background-color: rgba(255,255,255,.2);">
-                  <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                      Projects Tab
-                  </h3>
-                  <!-- <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="project-choice-modal">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body
+        class="bg-green-200 relative min-h-screen"
+        style="
+            background: linear-gradient(
+                180deg,
+                #1e3d34,
+                #13412b,
+                #0e5621,
+                #007117
+            );
+        "
+    >
+        <nav
+            class="bg-green-600 border-gray-200 dark:bg-gray-900 absolute top-0 left-0 right-0 bg-gray-800 text-white p-4"
+        >
+            <div
+                class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+            >
+                <a href="index.html" class="flex items-center">
+                    <h1>AAK Tech</h1>
+                </a>
+                <button
+                    onclick="toggleMobileMenu()"
+                    data-collapse-toggle="navbar-default"
+                    type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm bg-green-400 text-yellow-700 rounded-lg md:hidden hover:bg-green-500 hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-default"
+                    aria-expanded="false"
+                >
+                    <span class="sr-only">Open main menu</span>
+                    <svg
+                        class="w-5 h-5"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 17 14"
+                    >
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15"
+                        />
+                    </svg>
+                </button>
+                <div
+                    class="hidden w-full md:block md:w-auto"
+                    id="navbar-default"
+                >
+                    <ul
+                        class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700"
+                    >
+                        <li>
+                            <a
+                                href="index.html"
+                                class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="about.html"
+                                class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0"
+                                >About</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="qualifications-experience.html"
+                                class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0"
+                                >Qualifications | Experience</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="projects.html"
+                                class="block py-2 pl-3 pr-4 md:p-0 md:text-yellow-300"
+                                aria-current="page"
+                                >Projects</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="contact.html"
+                                class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Project Choice Modal -->
+        <div
+            id="project-choice-modal"
+            data-modal-backdrop="static"
+            tabindex="-1"
+            aria-hidden="true"
+            class="flex flex-row justify-center items-center fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full mx-auto"
+        >
+            <div class="modal-overlay fixed inset-0 bg-black opacity-50"></div>
+            <div class="relative w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                    class="relative rounded-lg shadow dark:bg-gray-700 bg-yellow-400"
+                >
+                    <!-- Modal header -->
+                    <div
+                        class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600"
+                        style="background-color: rgba(255, 255, 255, 0.2)"
+                    >
+                        <h3
+                            class="text-xl font-semibold text-gray-900 dark:text-white"
+                        >
+                            Projects Tab
+                        </h3>
+                        <!-- <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="project-choice-modal">
                       <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                       </svg>
                       <span class="sr-only">Close modal</span>
                   </button> -->
-              </div>
-              <!-- Modal body -->
-              <div class="p-6 space-y-6">
-                  <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                    Which type of projects do you want to view?
-                  </p>
-                  
-              </div>
-              <!-- Modal footer -->
-              <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                  <button data-modal-hide="project-choice-modal" type="button" onclick="showPersonalProjects()" class="bg-white text-green-700 py-2 px-4 rounded mr-4">Personal</button>
-                  <button data-modal-hide="project-choice-modal" type="button" onclick="showAcademicProjects()" class="bg-gray-600 text-white py-2 px-4 rounded">Academic</button>
-              </div>
-          </div>
-      </div>
-    </div>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-6 space-y-6">
+                        <p
+                            class="text-base leading-relaxed text-gray-500 dark:text-gray-400"
+                        >
+                            Which type of projects do you want to view?
+                        </p>
+                    </div>
+                    <!-- Modal footer -->
+                    <div
+                        class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600"
+                    >
+                        <button
+                            data-modal-hide="project-choice-modal"
+                            type="button"
+                            onclick="showPersonalProjects()"
+                            class="bg-white text-green-700 py-2 px-4 rounded mr-4"
+                        >
+                            Personal
+                        </button>
+                        <button
+                            data-modal-hide="project-choice-modal"
+                            type="button"
+                            onclick="showAcademicProjects()"
+                            class="bg-gray-600 text-white py-2 px-4 rounded"
+                        >
+                            Academic
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <!-- Academic Projects Flexbox -->
-    <div class="flex items-center justify-evenly min-h-screen hidden " id="flex-academic-projects">
-      <!-- Highway Racers Card -->
-      <div class="max-w-sm bg-yellow-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-            <img class="rounded-t-lg" src="./Media/highway-square.png" alt="" />
-        </a>
-        <div class="p-5">
-            <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Highway Racers</h5>
-            </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              An Android-based endless runner game, built using Unity 3D. 
-              It features a motorcyclist evading a police chase while manouvreing 
-              through traffic and obstacles in different landscapes.
-            </p>
-            <!-- <a href="https://github.com/ammantariq41/p01-highway_racers_2" target="_blank" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        <!-- Academic Projects Flexbox -->
+        <div
+            class="flex items-center justify-evenly min-h-screen hidden"
+            id="flex-academic-projects"
+        >
+            <!-- Highway Racers Card -->
+            <div
+                class="max-w-sm bg-yellow-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            >
+                <a href="#">
+                    <img
+                        class="rounded-t-lg"
+                        src="./Media/highway-square.png"
+                        alt=""
+                    />
+                </a>
+                <div class="p-5">
+                    <a href="#">
+                        <h5
+                            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                        >
+                            Highway Racers
+                        </h5>
+                    </a>
+                    <p
+                        class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+                    >
+                        An Android-based endless runner game, built using Unity
+                        3D. It features a motorcyclist evading a police chase
+                        while manouvreing through traffic and obstacles in
+                        different landscapes.
+                    </p>
+                    <!-- <a href="https://github.com/ammantariq41/p01-highway_racers_2" target="_blank" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 View Project
                 <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                 </svg>
             </a> -->
-            <a href="https://github.com/ammantariq41/p01-highway_racers_2" target="_blank">
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View Project</button>
-            </a>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="highwayRacersDetailsBtn" onclick="showHighwayRacersDetail()">More Details</button>
-            
-        </div>
-      </div>
-      <!-- Software House Management System Card -->
-      <div class="max-w-sm bg-yellow-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-            <img class="rounded-t-lg" src="./Media/shms-square-laptop.png" alt="" />
-        </a>
-        <div class="p-5">
-            <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Software House Management System</h5>
-            </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              A full-stack solution for any software house. It has basic tasks such
-              as adding employees, facilitating their signing up and logging in, and
-              assigning of tasks to them.
-            </p>
-            <!-- <a href="https://github.com/muhammad-hassnain/Software-House-Management-System" target="_blank" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <a
+                        href="https://github.com/ammantariq41/p01-highway_racers_2"
+                        target="_blank"
+                    >
+                        <button
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        >
+                            View Project
+                        </button>
+                    </a>
+                    <button
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        id="highwayRacersDetailsBtn"
+                        onclick="showHighwayRacersDetail()"
+                    >
+                        More Details
+                    </button>
+                </div>
+            </div>
+            <!-- Software House Management System Card -->
+            <div
+                class="max-w-sm bg-yellow-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            >
+                <a href="#">
+                    <img
+                        class="rounded-t-lg"
+                        src="./Media/shms-square-laptop.png"
+                        alt=""
+                    />
+                </a>
+                <div class="p-5">
+                    <a href="#">
+                        <h5
+                            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                        >
+                            Software House Management System
+                        </h5>
+                    </a>
+                    <p
+                        class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+                    >
+                        A full-stack solution for any software house. It has
+                        basic tasks such as adding employees, facilitating their
+                        signing up and logging in, and assigning of tasks to
+                        them.
+                    </p>
+                    <!-- <a href="https://github.com/muhammad-hassnain/Software-House-Management-System" target="_blank" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 View Project
                 <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                 </svg>
             </a> -->
-            <a href="https://github.com/muhammad-hassnain/Software-House-Management-System" target="_blank">
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View Project</button>
-            </a>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="shmsDetailsBtn" onclick="showSHMSDetail()">More Details</button>
-            <!-- <button id="shmsDetailsBtn" onclick="showSHMSDetail()">More Details</button> -->
-        </div>
-      </div>
-      <!-- LUMSafar Card -->
-      <div class="max-w-sm bg-yellow-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-            <img class="rounded-t-lg" src="./Media/lumsafar-square.png" alt="" />
-        </a>
-        <div class="p-5">
-            <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">LUMSafar</h5>
-            </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              A mobile app for facilitating socialization of the students of LUMS amongst themselves.
-              It includes signup, login, messaging and befriending other users, having a filtered news feed and
-              also a campus map feature to find out where your friends are.
-            </p>
-            <!-- <a href="https://github.com/AhsanSarwar45/LUMSafar" target="_blank" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <a
+                        href="https://github.com/muhammad-hassnain/Software-House-Management-System"
+                        target="_blank"
+                    >
+                        <button
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        >
+                            View Project
+                        </button>
+                    </a>
+                    <button
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        id="shmsDetailsBtn"
+                        onclick="showSHMSDetail()"
+                    >
+                        More Details
+                    </button>
+                    <!-- <button id="shmsDetailsBtn" onclick="showSHMSDetail()">More Details</button> -->
+                </div>
+            </div>
+            <!-- LUMSafar Card -->
+            <div
+                class="max-w-sm bg-yellow-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            >
+                <a href="#">
+                    <img
+                        class="rounded-t-lg"
+                        src="./Media/lumsafar-square.png"
+                        alt=""
+                    />
+                </a>
+                <div class="p-5">
+                    <a href="#">
+                        <h5
+                            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                        >
+                            LUMSafar
+                        </h5>
+                    </a>
+                    <p
+                        class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+                    >
+                        A mobile app for facilitating socialization of the
+                        students of LUMS amongst themselves. It includes signup,
+                        login, messaging and befriending other users, having a
+                        filtered news feed and also a campus map feature to find
+                        out where your friends are.
+                    </p>
+                    <!-- <a href="https://github.com/AhsanSarwar45/LUMSafar" target="_blank" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 View Project
                 <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                 </svg>
             </a> -->
-            <a href="https://github.com/AhsanSarwar45/LUMSafar" target="_blank">
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View Project</button>
-            </a>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="lumsafarDetailsBtn" onclick="showLumsafarDetail()">More Details</button>
-            <!-- <button id="lumsafarDetailsBtn" onclick="showLumsafarDetail()">More Details</button> -->
+                    <a
+                        href="https://github.com/AhsanSarwar45/LUMSafar"
+                        target="_blank"
+                    >
+                        <button
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        >
+                            View Project
+                        </button>
+                    </a>
+                    <button
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        id="lumsafarDetailsBtn"
+                        onclick="showLumsafarDetail()"
+                    >
+                        More Details
+                    </button>
+                    <!-- <button id="lumsafarDetailsBtn" onclick="showLumsafarDetail()">More Details</button> -->
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    <!-- Personal Projects Flexbox -->
-    <div class="flex items-center justify-evenly min-h-screen hidden" id="flex-personal-projects">
-      <!-- A5BC Card -->
-      <div class="max-w-sm bg-yellow-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-            <img class="rounded-t-lg" src="./Media/a5bc-laptop.png" alt="" />
-        </a>
-        <div class="p-5">
-            <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Askari 5 Badminton Club - Lahore</h5>
-            </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              A detailed promotional page for Askari 5 Badminton Club, one of the many outdoor badminton teams in Lahore.
-            Not only does it inform clients of the club's details, but it also does so with very aesthetic animations 
-            and styles incorporated into it using a mixture of pure CSS and Bootsrap.
-            </p>
-            <!-- <a href="../Askari 5 Badminton Club - Lahore/index.html" target="_blank" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+        <!-- Personal Projects Flexbox -->
+        <div
+            class="flex items-center justify-evenly min-h-screen hidden"
+            id="flex-personal-projects"
+        >
+            <!-- A5BC Card -->
+            <div
+                class="max-w-sm bg-yellow-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            >
+                <a href="#">
+                    <img
+                        class="rounded-t-lg"
+                        src="./Media/a5bc-laptop.png"
+                        alt=""
+                    />
+                </a>
+                <div class="p-5">
+                    <a href="#">
+                        <h5
+                            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                        >
+                            Askari 5 Badminton Club - Lahore
+                        </h5>
+                    </a>
+                    <p
+                        class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+                    >
+                        A detailed promotional page for Askari 5 Badminton Club,
+                        one of the many outdoor badminton teams in Lahore. Not
+                        only does it inform clients of the club's details, but
+                        it also does so with very aesthetic animations and
+                        styles incorporated into it using a mixture of pure CSS
+                        and Bootsrap.
+                    </p>
+                    <!-- <a href="../Askari 5 Badminton Club - Lahore/index.html" target="_blank" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 View Project
                 <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                 </svg>
             </a>
             <button id="a5bcDetailsBtn" onclick="showA5bcDetail()">More Details</button> -->
-            <a href="../Askari 5 Badminton Club - Lahore/index.html" target="_blank">
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View Project</button>
-            </a>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="a5bcDetailsBtn" onclick="showA5bcDetail()">More Details</button>
-        </div>
-      </div>
-      <!-- AAK's Fancy Randomizer Card -->
-      <div class="max-w-sm bg-yellow-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-            <img class="rounded-t-lg" src="./Media/randomizer-laptop.png" alt="" />
-        </a>
-        <div class="p-5">
-            <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">AAK's Fancy Randomizer</h5>
-            </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              A single-page application built using vanilla JavaScript, that provides clients with tailored list of
-              random numbers in whatever way they want. Useful for academics who need large samples of random numbers
-              as data in their research work.
-            </p>
-            <!-- <a href="../AAK's Fancy Randomizer/index.html" target="_blank" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <a
+                        href="../Askari 5 Badminton Club - Lahore/index.html"
+                        target="_blank"
+                    >
+                        <button
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        >
+                            View Project
+                        </button>
+                    </a>
+                    <button
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        id="a5bcDetailsBtn"
+                        onclick="showA5bcDetail()"
+                    >
+                        More Details
+                    </button>
+                </div>
+            </div>
+            <!-- AAK's Fancy Randomizer Card -->
+            <div
+                class="max-w-sm bg-yellow-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            >
+                <a href="#">
+                    <img
+                        class="rounded-t-lg"
+                        src="./Media/randomizer-laptop.png"
+                        alt=""
+                    />
+                </a>
+                <div class="p-5">
+                    <a href="#">
+                        <h5
+                            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                        >
+                            AAK's Fancy Randomizer
+                        </h5>
+                    </a>
+                    <p
+                        class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+                    >
+                        A single-page application built using vanilla
+                        JavaScript, that provides clients with tailored list of
+                        random numbers in whatever way they want. Useful for
+                        academics who need large samples of random numbers as
+                        data in their research work.
+                    </p>
+                    <!-- <a href="../AAK's Fancy Randomizer/index.html" target="_blank" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 View Project
                 <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                 </svg>
             </a>
             <button id="randomizerDetailsBtn" onclick="showRandomizerDetail()">More Details</button> -->
-            <a href="../AAK's Fancy Randomizer/index.html" target="_blank">
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View Project</button>
-            </a>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="randomizerDetailsBtn" onclick="showRandomizerDetail()">More Details</button>
-        </div>
-      </div>
-      <!-- Shopping Cart System Card -->
-      <div class="max-w-sm bg-yellow-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <a href="#">
-            <img class="rounded-t-lg" src="./Media/shopping-cart-square.png" alt="" />
-        </a>
-        <div class="p-5">
-            <a href="#">
-                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Shopping Cart System</h5>
-            </a>
-            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-              A shopping cart system made from Core PHP to handle the workings of an online store. This features several pages to
-              select products, buy them, perform CRUD operations on them, update stock and get a report on all orders
-              of the company, with different search filters implemented too. 
-            </p>
-            <!-- <a href="#" target="_blank" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <a
+                        href="../AAK's Fancy Randomizer/index.html"
+                        target="_blank"
+                    >
+                        <button
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        >
+                            View Project
+                        </button>
+                    </a>
+                    <button
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        id="randomizerDetailsBtn"
+                        onclick="showRandomizerDetail()"
+                    >
+                        More Details
+                    </button>
+                </div>
+            </div>
+            <!-- Shopping Cart System Card -->
+            <div
+                class="max-w-sm bg-yellow-400 border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            >
+                <a href="#">
+                    <img
+                        class="rounded-t-lg"
+                        src="./Media/shopping-cart-square.png"
+                        alt=""
+                    />
+                </a>
+                <div class="p-5">
+                    <a href="#">
+                        <h5
+                            class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                        >
+                            Shopping Cart System
+                        </h5>
+                    </a>
+                    <p
+                        class="mb-3 font-normal text-gray-700 dark:text-gray-400"
+                    >
+                        A shopping cart system made from Core PHP to handle the
+                        workings of an online store. This features several pages
+                        to select products, buy them, perform CRUD operations on
+                        them, update stock and get a report on all orders of the
+                        company, with different search filters implemented too.
+                    </p>
+                    <!-- <a href="#" target="_blank" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                 View Project
                 <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
                 </svg>
             </a>
             <button id="spellingBeeDetailsBtn" onclick="showSpellingBeeDetail()"></button> -->
-            <a href="https://github.com/AbdullahAhmadAAK/Shopping-Cart-System" target="_blank">
-              <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View Github Repo</button>
-            </a>
-            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="spellingBeeDetailsBtn" onclick="showSpellingBeeDetail()">More Details</button>
+                    <a
+                        href="https://github.com/AbdullahAhmadAAK/Shopping-Cart-System"
+                        target="_blank"
+                    >
+                        <button
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        >
+                            View Github Repo
+                        </button>
+                    </a>
+                    <button
+                        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                        id="spellingBeeDetailsBtn"
+                        onclick="showSpellingBeeDetail()"
+                    >
+                        More Details
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  
-    <!-- Highway Racers Modal -->  
-    <div id="highwayRacersModal" tabindex="-1" aria-hidden="true" class="flex flex-row justify-center items-center hidden fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-      <div class="modal-overlay fixed inset-0 bg-black opacity-50" onclick="hideHighwayRacersDetail()"></div>
-      <div class="relative w-full max-w-2xl max-h-full">
-          <!-- Modal content -->
-          <div class="relative bg-orange-500 rounded-lg shadow dark:bg-gray-700">
-              <!-- Modal header -->
-              <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-                  <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                      Highway Racers
-                  </h3>
-                  <button type="button" id="closeX-HighwayRacerBtn" onclick="hideHighwayRacersDetail()" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="staticModal">
-                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                      </svg>
-                      <span class="sr-only">Close modal</span>
-                  </button>
-              </div>
-              <!-- Modal body -->
-              <div class="p-6 space-y-6">
-                <a href="#">
-                  <img class="rounded-t-lg" src="./Media/highway-square.png" alt="" />
-                </a>
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                  A Unity-based, mobile-based endless runner with Mindstorm Studios and Dr. Waqar Ahmed as our mentors. Developed on Unity 3D.
-                </p>
-                <ul>
-                  <li>Developed various game features in it.,such as infinite path generation, bike movement and bike aesthetics</li>
-                  <li>Developed UI of the game by creating start and end screens.</li>
-                  <li>Maintained majority of the documentation work</li>
-                  <li>Researched into game development resources - “The Art of Game Design” and a development playlist by Mindstorm Studios</li>
-                </ul>
-              </div>
-              <!-- Modal footer -->
-              <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                  <button data-modal-hide="highwayRacersModal" type="button" id="close-HighwayRacersBtn" onclick="hideHighwayRacersDetail()" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Close</button>
-                  <!-- <button data-modal-hide="staticModal" type="button" onclick="showAcademicProjects()" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Academic</button> -->
-              </div>
-          </div>
-      </div>
-    </div>
-    <!-- Software House Management System Modal -->
-    <div id="shmsModal" tabindex="-1" aria-hidden="true" class="flex flex-row justify-center items-center hidden fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-      <div class="modal-overlay fixed inset-0 bg-black opacity-50" onclick="hideSHMSDetail()"></div>
-      <div class="relative w-full max-w-2xl max-h-full">
-          <!-- Modal content -->
-          <div class="relative bg-orange-500 rounded-lg shadow dark:bg-gray-700">
-              <!-- Modal header -->
-              <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-                  <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                      Software House Management System
-                  </h3>
-                  <button type="button" id="closeX-SHMSBtn" onclick="hideSHMSDetail()" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="staticModal">
-                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                      </svg>
-                      <span class="sr-only">Close modal</span>
-                  </button>
-              </div>
-              <!-- Modal body -->
-              <div class="p-6 space-y-6">
-                <a href="#">
-                  <img class="rounded-t-lg" src="./Media/shms-square-laptop.png" alt="" />
-                </a>
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                  A management system for managing the internal workings of a software house, produced under guidance of Dr. Naveed Arshad.
-                </p>
-                <ul>
-                  <li>Developed frontend and backend for login, privilege levels, creating employee reviews and viewing employees' data.</li>
-                  <li>Tools, frameworks and languages used: React, Express, Node, MySQL, Postman</li>
-                </ul>
 
-                <h4 class="text-center underline">Login Credentials:</h4>
-                <div class="flex justify-center space-x-4">
-                  <!-- First Div -->
-                  <div class="bg-gray-200 p-4 rounded-lg">
-                      <p class="text-center mb-2 font-semibold">Software Engineer</p>
-                      <p class="text-center mb-2">Email: raffayatiq2341@gmail.com</p>
-                      <p class="text-center">Password: 123456789</p>
-                  </div>
-              
-                  <!-- Second Div -->
-                  <div class="bg-gray-200 p-4 rounded-lg">
-                      <p class="text-center mb-2 font-semibold">Project Manager</p>
-                      <p class="text-center mb-2">Email: raffayatiq2341@gmail.com</p>
-                      <p class="text-center">Password: 123456789</p>
-                  </div>
-              
-                  <!-- Third Div -->
-                  <div class="bg-gray-200 p-4 rounded-lg">
-                      <p class="text-center mb-2 font-semibold">Human Resources</p>
-                      <p class="text-center mb-2">Email: raffayhr@gmail.com</p>
-                      <p class="text-center">Password: 123456789</p>
-                  </div>
-              </div>
-              
-              
-              </div>
-              <!-- Modal footer -->
-              <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                  <button data-modal-hide="shmsModal" type="button" id="close-SHMSBtn" onclick="hideSHMSDetail()" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Close</button>
-                  <a href="https://softwarehousemanagement.herokuapp.com/" target="_blank">
-                    <button class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">View Project</button>
-                  </a>
-              </div>
-          </div>
-      </div>
-    </div>
-    <!-- LUMSafar Modal -->
-    <div id="LumsafarModal" tabindex="-1" aria-hidden="true" class="flex flex-row justify-center items-center hidden fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-      <div class="modal-overlay fixed inset-0 bg-black opacity-50" onclick="hideLumsafarDetail()"></div>
-      <div class="relative w-full max-w-2xl max-h-full">
-          <!-- Modal content -->
-          <div class="relative bg-orange-500 rounded-lg shadow dark:bg-gray-700">
-              <!-- Modal header -->
-              <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-                  <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                      LUMSafar
-                  </h3>
-                  <button type="button" id="closeX-LumsafarBtn" onclick="hideLumsafarDetail()" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="staticModal">
-                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                      </svg>
-                      <span class="sr-only">Close modal</span>
-                  </button>
-              </div>
-              <!-- Modal body -->
-              <div class="p-6 space-y-6">
-                <a href="#">
-                  <img class="rounded-t-lg" src="./Media/lumsafar-square.png" alt="" />
-                </a>
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                  A socialization app for LUMS students, produced under guidance of Dr. Suleman Shahid.
-                </p>
-                <ul>
-                  <li>Majorly worked in documenting proposal document, SRS, SDS</li>
-                  <li>Contributed to backend for editing profile and searching by fixing errors in code</li>
-                  <li>Conducted usability testing of the app</li>
-                  <li>Tools, frameworks and languages used: React, Typescript, JavaScript, Node, MongoDB</li>
-                </ul>
+        <!-- Highway Racers Modal -->
+        <div
+            id="highwayRacersModal"
+            tabindex="-1"
+            aria-hidden="true"
+            class="flex flex-row justify-center items-center hidden fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+        >
+            <div
+                class="modal-overlay fixed inset-0 bg-black opacity-50"
+                onclick="hideHighwayRacersDetail()"
+            ></div>
+            <div class="relative w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                    class="relative bg-orange-500 rounded-lg shadow dark:bg-gray-700"
+                >
+                    <!-- Modal header -->
+                    <div
+                        class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600"
+                    >
+                        <h3
+                            class="text-xl font-semibold text-gray-900 dark:text-white"
+                        >
+                            Highway Racers
+                        </h3>
+                        <button
+                            type="button"
+                            id="closeX-HighwayRacerBtn"
+                            onclick="hideHighwayRacersDetail()"
+                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                            data-modal-hide="staticModal"
+                        >
+                            <svg
+                                class="w-3 h-3"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 14 14"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                                />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-6 space-y-6">
+                        <a href="#">
+                            <img
+                                class="rounded-t-lg"
+                                src="./Media/highway-square.png"
+                                alt=""
+                            />
+                        </a>
+                        <p
+                            class="text-base leading-relaxed text-gray-500 dark:text-gray-400"
+                        >
+                            A Unity-based, mobile-based endless runner with
+                            Mindstorm Studios and Dr. Waqar Ahmed as our
+                            mentors. Developed on Unity 3D.
+                        </p>
+                        <ul>
+                            <li>
+                                Developed various game features in it.,such as
+                                infinite path generation, bike movement and bike
+                                aesthetics
+                            </li>
+                            <li>
+                                Developed UI of the game by creating start and
+                                end screens.
+                            </li>
+                            <li>
+                                Maintained majority of the documentation work
+                            </li>
+                            <li>
+                                Researched into game development resources -
+                                “The Art of Game Design” and a development
+                                playlist by Mindstorm Studios
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Modal footer -->
+                    <div
+                        class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600"
+                    >
+                        <button
+                            data-modal-hide="highwayRacersModal"
+                            type="button"
+                            id="close-HighwayRacersBtn"
+                            onclick="hideHighwayRacersDetail()"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        >
+                            Close
+                        </button>
+                        <!-- <button data-modal-hide="staticModal" type="button" onclick="showAcademicProjects()" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Academic</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Software House Management System Modal -->
+        <div
+            id="shmsModal"
+            tabindex="-1"
+            aria-hidden="true"
+            class="flex flex-row justify-center items-center hidden fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+        >
+            <div
+                class="modal-overlay fixed inset-0 bg-black opacity-50"
+                onclick="hideSHMSDetail()"
+            ></div>
+            <div class="relative w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                    class="relative bg-orange-500 rounded-lg shadow dark:bg-gray-700"
+                >
+                    <!-- Modal header -->
+                    <div
+                        class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600"
+                    >
+                        <h3
+                            class="text-xl font-semibold text-gray-900 dark:text-white"
+                        >
+                            Software House Management System
+                        </h3>
+                        <button
+                            type="button"
+                            id="closeX-SHMSBtn"
+                            onclick="hideSHMSDetail()"
+                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                            data-modal-hide="staticModal"
+                        >
+                            <svg
+                                class="w-3 h-3"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 14 14"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                                />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-6 space-y-6">
+                        <a href="#">
+                            <img
+                                class="rounded-t-lg"
+                                src="./Media/shms-square-laptop.png"
+                                alt=""
+                            />
+                        </a>
+                        <p
+                            class="text-base leading-relaxed text-gray-500 dark:text-gray-400"
+                        >
+                            A management system for managing the internal
+                            workings of a software house, produced under
+                            guidance of Dr. Naveed Arshad.
+                        </p>
+                        <ul>
+                            <li>
+                                Developed frontend and backend for login,
+                                privilege levels, creating employee reviews and
+                                viewing employees' data.
+                            </li>
+                            <li>
+                                Tools, frameworks and languages used: React,
+                                Express, Node, MySQL, Postman
+                            </li>
+                        </ul>
 
-                <a href="https://www.figma.com/file/QSLGkV1WHgMpYqNWwajrB9/Lumsafar?type=design&mode=design">Figma Link</a>
-              </div>
-              <!-- Modal footer -->
-              <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                  <button data-modal-hide="LumsafarModal" type="button" id="close-LumsafarBtn" onclick="hideLumsafarDetail()" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Close</button>
-                  <!-- <button data-modal-hide="staticModal" type="button" onclick="showAcademicProjects()" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Academic</button> -->
-              </div>
-          </div>
-      </div>
-    </div>
-    <!-- A5BC Modal -->
-    <div id="a5bcModal" tabindex="-1" aria-hidden="true" class="flex flex-row justify-center items-center hidden fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-      <div class="modal-overlay fixed inset-0 bg-black opacity-50" onclick="hideA5bcDetail()"></div>
-      <div class="relative w-full max-w-2xl max-h-full">
-          <!-- Modal content -->
-          <div class="relative bg-orange-500 rounded-lg shadow dark:bg-gray-700">
-              <!-- Modal header -->
-              <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-                  <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                      Askari 5 Badminton Club
-                  </h3>
-                  <button type="button" id="closeX-A5bcBtn" onclick="hideA5bcDetail()" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="staticModal">
-                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                      </svg>
-                      <span class="sr-only">Close modal</span>
-                  </button>
-              </div>
-              <!-- Modal body -->
-              <div class="p-6 space-y-6">
-                <a href="#">
-                  <img class="rounded-t-lg" src="./Media/a5bc-laptop.png" alt="" />
-                </a>
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                  A Unity-based, mobile-based endless runner with Mindstorm Studios and Dr. Waqar Ahmed as our mentors. Developed on Unity 3D.
-                </p>
-                <!-- <ul>
+                        <h4 class="text-center underline">
+                            Login Credentials:
+                        </h4>
+                        <div class="flex justify-center space-x-4">
+                            <!-- First Div -->
+                            <div class="bg-gray-200 p-4 rounded-lg">
+                                <p class="text-center mb-2 font-semibold">
+                                    Software Engineer
+                                </p>
+                                <p class="text-center mb-2">
+                                    Email: raffayatiq2341@gmail.com
+                                </p>
+                                <p class="text-center">Password: 123456789</p>
+                            </div>
+
+                            <!-- Second Div -->
+                            <div class="bg-gray-200 p-4 rounded-lg">
+                                <p class="text-center mb-2 font-semibold">
+                                    Project Manager
+                                </p>
+                                <p class="text-center mb-2">
+                                    Email: raffayatiq2341@gmail.com
+                                </p>
+                                <p class="text-center">Password: 123456789</p>
+                            </div>
+
+                            <!-- Third Div -->
+                            <div class="bg-gray-200 p-4 rounded-lg">
+                                <p class="text-center mb-2 font-semibold">
+                                    Human Resources
+                                </p>
+                                <p class="text-center mb-2">
+                                    Email: raffayhr@gmail.com
+                                </p>
+                                <p class="text-center">Password: 123456789</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Modal footer -->
+                    <div
+                        class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600"
+                    >
+                        <button
+                            data-modal-hide="shmsModal"
+                            type="button"
+                            id="close-SHMSBtn"
+                            onclick="hideSHMSDetail()"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        >
+                            Close
+                        </button>
+                        <a
+                            href="https://softwarehousemanagement.herokuapp.com/"
+                            target="_blank"
+                        >
+                            <button
+                                class="bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded"
+                            >
+                                View Project
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- LUMSafar Modal -->
+        <div
+            id="LumsafarModal"
+            tabindex="-1"
+            aria-hidden="true"
+            class="flex flex-row justify-center items-center hidden fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+        >
+            <div
+                class="modal-overlay fixed inset-0 bg-black opacity-50"
+                onclick="hideLumsafarDetail()"
+            ></div>
+            <div class="relative w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                    class="relative bg-orange-500 rounded-lg shadow dark:bg-gray-700"
+                >
+                    <!-- Modal header -->
+                    <div
+                        class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600"
+                    >
+                        <h3
+                            class="text-xl font-semibold text-gray-900 dark:text-white"
+                        >
+                            LUMSafar
+                        </h3>
+                        <button
+                            type="button"
+                            id="closeX-LumsafarBtn"
+                            onclick="hideLumsafarDetail()"
+                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                            data-modal-hide="staticModal"
+                        >
+                            <svg
+                                class="w-3 h-3"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 14 14"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                                />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-6 space-y-6">
+                        <a href="#">
+                            <img
+                                class="rounded-t-lg"
+                                src="./Media/lumsafar-square.png"
+                                alt=""
+                            />
+                        </a>
+                        <p
+                            class="text-base leading-relaxed text-gray-500 dark:text-gray-400"
+                        >
+                            A socialization app for LUMS students, produced
+                            under guidance of Dr. Suleman Shahid.
+                        </p>
+                        <ul>
+                            <li>
+                                Majorly worked in documenting proposal document,
+                                SRS, SDS
+                            </li>
+                            <li>
+                                Contributed to backend for editing profile and
+                                searching by fixing errors in code
+                            </li>
+                            <li>Conducted usability testing of the app</li>
+                            <li>
+                                Tools, frameworks and languages used: React,
+                                Typescript, JavaScript, Node, MongoDB
+                            </li>
+                        </ul>
+
+                        <a
+                            href="https://www.figma.com/file/QSLGkV1WHgMpYqNWwajrB9/Lumsafar?type=design&mode=design"
+                            >Figma Link</a
+                        >
+                    </div>
+                    <!-- Modal footer -->
+                    <div
+                        class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600"
+                    >
+                        <button
+                            data-modal-hide="LumsafarModal"
+                            type="button"
+                            id="close-LumsafarBtn"
+                            onclick="hideLumsafarDetail()"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        >
+                            Close
+                        </button>
+                        <!-- <button data-modal-hide="staticModal" type="button" onclick="showAcademicProjects()" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Academic</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- A5BC Modal -->
+        <div
+            id="a5bcModal"
+            tabindex="-1"
+            aria-hidden="true"
+            class="flex flex-row justify-center items-center hidden fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+        >
+            <div
+                class="modal-overlay fixed inset-0 bg-black opacity-50"
+                onclick="hideA5bcDetail()"
+            ></div>
+            <div class="relative w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                    class="relative bg-orange-500 rounded-lg shadow dark:bg-gray-700"
+                >
+                    <!-- Modal header -->
+                    <div
+                        class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600"
+                    >
+                        <h3
+                            class="text-xl font-semibold text-gray-900 dark:text-white"
+                        >
+                            Askari 5 Badminton Club
+                        </h3>
+                        <button
+                            type="button"
+                            id="closeX-A5bcBtn"
+                            onclick="hideA5bcDetail()"
+                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                            data-modal-hide="staticModal"
+                        >
+                            <svg
+                                class="w-3 h-3"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 14 14"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                                />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-6 space-y-6">
+                        <a href="#">
+                            <img
+                                class="rounded-t-lg"
+                                src="./Media/a5bc-laptop.png"
+                                alt=""
+                            />
+                        </a>
+                        <p
+                            class="text-base leading-relaxed text-gray-500 dark:text-gray-400"
+                        >
+                            A Unity-based, mobile-based endless runner with
+                            Mindstorm Studios and Dr. Waqar Ahmed as our
+                            mentors. Developed on Unity 3D.
+                        </p>
+                        <!-- <ul>
                   <li>Developed various game features in it.,such as infinite path generation, bike movement and bike aesthetics</li>
                   <li>Developed UI of the game by creating start and end screens.</li>
                   <li>Maintained majority of the documentation work</li>
                   <li>Researched into game development resources - “The Art of Game Design” and a development playlist by Mindstorm Studios</li>
                 </ul> -->
-              </div>
-              <!-- Modal footer -->
-              <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                  <button data-modal-hide="a5bcModal" type="button" id="close-A5bcBtn" onclick="hideA5bcDetail()" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Close</button>
-                  <!-- <button data-modal-hide="staticModal" type="button" onclick="showAcademicProjects()" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Academic</button> -->
-              </div>
-          </div>
-      </div>
-    </div>
-    <!-- AAK's Fancy Randomizer Modal -->
-    <div id="fancyRandomizerModal" tabindex="-1" aria-hidden="true" class="flex flex-row justify-center items-center hidden fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-      <div class="modal-overlay fixed inset-0 bg-black opacity-50" onclick="hideRandomizerDetail()"></div>
-      <div class="relative w-full max-w-2xl max-h-full">
-          <!-- Modal content -->
-          <div class="relative bg-orange-500 rounded-lg shadow dark:bg-gray-700">
-              <!-- Modal header -->
-              <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-                  <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                      AAK's Fancy Randomizer
-                  </h3>
-                  <button type="button" id="closeX-RandomizerBtn" onclick="hideRandomizerDetail()" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="staticModal">
-                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                      </svg>
-                      <span class="sr-only">Close modal</span>
-                  </button>
-              </div>
-              <!-- Modal body -->
-              <div class="p-6 space-y-6">
-                <a href="#">
-                  <img class="rounded-t-lg" src="./Media/randomizer-laptop.png" alt="" />
-                </a>
-                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                  
-                </p>
-                <!-- <ul>
+                    </div>
+                    <!-- Modal footer -->
+                    <div
+                        class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600"
+                    >
+                        <button
+                            data-modal-hide="a5bcModal"
+                            type="button"
+                            id="close-A5bcBtn"
+                            onclick="hideA5bcDetail()"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        >
+                            Close
+                        </button>
+                        <!-- <button data-modal-hide="staticModal" type="button" onclick="showAcademicProjects()" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Academic</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- AAK's Fancy Randomizer Modal -->
+        <div
+            id="fancyRandomizerModal"
+            tabindex="-1"
+            aria-hidden="true"
+            class="flex flex-row justify-center items-center hidden fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+        >
+            <div
+                class="modal-overlay fixed inset-0 bg-black opacity-50"
+                onclick="hideRandomizerDetail()"
+            ></div>
+            <div class="relative w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                    class="relative bg-orange-500 rounded-lg shadow dark:bg-gray-700"
+                >
+                    <!-- Modal header -->
+                    <div
+                        class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600"
+                    >
+                        <h3
+                            class="text-xl font-semibold text-gray-900 dark:text-white"
+                        >
+                            AAK's Fancy Randomizer
+                        </h3>
+                        <button
+                            type="button"
+                            id="closeX-RandomizerBtn"
+                            onclick="hideRandomizerDetail()"
+                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                            data-modal-hide="staticModal"
+                        >
+                            <svg
+                                class="w-3 h-3"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 14 14"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                                />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-6 space-y-6">
+                        <a href="#">
+                            <img
+                                class="rounded-t-lg"
+                                src="./Media/randomizer-laptop.png"
+                                alt=""
+                            />
+                        </a>
+                        <p
+                            class="text-base leading-relaxed text-gray-500 dark:text-gray-400"
+                        ></p>
+                        <!-- <ul>
                   <li>Developed various game features in it.,such as infinite path generation, bike movement and bike aesthetics</li>
                   <li>Developed UI of the game by creating start and end screens.</li>
                   <li>Maintained majority of the documentation work</li>
                   <li>Researched into game development resources - “The Art of Game Design” and a development playlist by Mindstorm Studios</li>
                 </ul> -->
-              </div>
-              <!-- Modal footer -->
-              <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                  <button data-modal-hide="fancyRandomizerModal" type="button" id="close-RandomizerBtn" onclick="hideRandomizerDetail()" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Close</button>
-                  <!-- <button data-modal-hide="staticModal" type="button" onclick="showAcademicProjects()" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Academic</button> -->
-              </div>
-          </div>
-      </div>
-    </div>
-    <!-- Shopping Cart System Modal -->
-    <div id="spellingBeeModal" tabindex="-1" aria-hidden="true" onclick="hideSpellingBeeDetail()" class="flex flex-row justify-center items-center hidden fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-      <div class="modal-overlay fixed inset-0 bg-black opacity-50"></div>
-      <div class="relative w-full max-w-2xl max-h-full">
-          <!-- Modal content -->
-          <div class="relative bg-orange-500 rounded-lg shadow dark:bg-gray-700">
-              <!-- Modal header -->
-              <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-                  <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                      Shopping Cart System
-                  </h3>
-                  <button type="button" id="closeX-SpellingHelperBtn" onclick="hideSpellingBeeDetail()" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="staticModal">
-                      <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
-                      </svg>
-                      <span class="sr-only">Close modal</span>
-                  </button>
-              </div>
-              <!-- Modal body -->
-              <div class="p-6 space-y-6">
-                <a href="#">
-                  <img class="rounded-t-lg" src="./Media/shopping-cart-square.png" alt="" />
-                </a>
-                <p>It has the following pages: </p>
-                <ul class="list-disc pl-6">
-                  <li>Home Page ==> show different products to customers for adding to cart</li>
-                  <li>Checkout Page ==> to allow customer to confirm order and provide his details</li>
-                  <li>Confirming Message Page ==> to let customer see the order he/she has confirmed</li>
-                  <li>Product Manager ==> a CRUD system to let admin perform create, update, read and delete operations on products</li>
-                  <li>Stock Page ==> to let admin manage inventory of products + has name search filter</li>
-                  <li>All Orders Page ==> to let admin see all orders' summaries, and see individual orders' details on clicking</li>
-                  <li>Generate Report Page ==> to let admin generate tailored reports of orders according to search filters</li>
-                </ul>
-              </div>
-              <!-- Modal footer -->
-              <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                  <button data-modal-hide="spellingBeeModal" type="button" id="close-SpellingHelperBtn" onclick="hideSpellingBeeDetail()" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Close</button>
-                  <!-- <button data-modal-hide="staticModal" type="button" onclick="showAcademicProjects()" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Academic</button> -->
-              </div>
-          </div>
-      </div>
-    </div>
-  </body>
-  <script>
-    const mobileMenu = document.getElementById('navbar-default');
-    const toggleMobileMenu = () => {
-      mobileMenu.classList.toggle('hidden');
-    }
-    const showPersonalProjects = () => {
-      const flex_projects = document.getElementById("flex-personal-projects");
-      const modal = document.getElementById("project-choice-modal");
-      flex_projects.classList.remove("hidden");
-      modal.classList.add("hidden");
-    };
-    const showAcademicProjects = () => {
-      const flex_projects = document.getElementById("flex-academic-projects");
-      const modal = document.getElementById("project-choice-modal");
-      flex_projects.classList.remove("hidden");
-      modal.classList.add("hidden");
-    };
-    const showHighwayRacersDetail = () => {
-      const modal = document.getElementById("highwayRacersModal");
-      modal.classList.remove("hidden");
-    }
-    const hideHighwayRacersDetail = () => {
-      const modal = document.getElementById("highwayRacersModal");
-      modal.classList.add("hidden");
-    }
-    const showSHMSDetail = () => {
-      const modal = document.getElementById("shmsModal");
-      modal.classList.remove("hidden");
-    }
-    const hideSHMSDetail = () => {
-      const modal = document.getElementById("shmsModal");
-      modal.classList.add("hidden");
-    }
-    const showLumsafarDetail = () => {
-      const modal = document.getElementById("LumsafarModal");
-      modal.classList.remove("hidden");
-    }
-    const hideLumsafarDetail = () => {
-      const modal = document.getElementById("LumsafarModal");
-      modal.classList.add("hidden");
-    }
-    const showA5bcDetail = () => {
-      const modal = document.getElementById("a5bcModal");
-      modal.classList.remove("hidden");
-    }
-    const hideA5bcDetail = () => {
-      const modal = document.getElementById("a5bcModal");
-      modal.classList.add("hidden");
-    }
-    const showRandomizerDetail = () => {
-      const modal = document.getElementById("fancyRandomizerModal");
-      modal.classList.remove("hidden");
-    }
-    const hideRandomizerDetail = () => {
-      const modal = document.getElementById("fancyRandomizerModal");
-      modal.classList.add("hidden");
-    }
-    const showSpellingBeeDetail = () => {
-      const modal = document.getElementById("spellingBeeModal");
-      modal.classList.remove("hidden");
-    }
-    const hideSpellingBeeDetail = () => {
-      const modal = document.getElementById("spellingBeeModal");
-      modal.classList.add("hidden");
-    }
-  </script>
+                    </div>
+                    <!-- Modal footer -->
+                    <div
+                        class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600"
+                    >
+                        <button
+                            data-modal-hide="fancyRandomizerModal"
+                            type="button"
+                            id="close-RandomizerBtn"
+                            onclick="hideRandomizerDetail()"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        >
+                            Close
+                        </button>
+                        <!-- <button data-modal-hide="staticModal" type="button" onclick="showAcademicProjects()" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Academic</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Shopping Cart System Modal -->
+        <div
+            id="spellingBeeModal"
+            tabindex="-1"
+            aria-hidden="true"
+            onclick="hideSpellingBeeDetail()"
+            class="flex flex-row justify-center items-center hidden fixed top-0 left-0 right-0 z-50 w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+        >
+            <div class="modal-overlay fixed inset-0 bg-black opacity-50"></div>
+            <div class="relative w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div
+                    class="relative bg-orange-500 rounded-lg shadow dark:bg-gray-700"
+                >
+                    <!-- Modal header -->
+                    <div
+                        class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600"
+                    >
+                        <h3
+                            class="text-xl font-semibold text-gray-900 dark:text-white"
+                        >
+                            Shopping Cart System
+                        </h3>
+                        <button
+                            type="button"
+                            id="closeX-SpellingHelperBtn"
+                            onclick="hideSpellingBeeDetail()"
+                            class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                            data-modal-hide="staticModal"
+                        >
+                            <svg
+                                class="w-3 h-3"
+                                aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 14 14"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="2"
+                                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                                />
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-6 space-y-6">
+                        <a href="#">
+                            <img
+                                class="rounded-t-lg"
+                                src="./Media/shopping-cart-square.png"
+                                alt=""
+                            />
+                        </a>
+                        <p>It has the following pages:</p>
+                        <ul class="list-disc pl-6">
+                            <li>
+                                Home Page ==> show different products to
+                                customers for adding to cart
+                            </li>
+                            <li>
+                                Checkout Page ==> to allow customer to confirm
+                                order and provide his details
+                            </li>
+                            <li>
+                                Confirming Message Page ==> to let customer see
+                                the order he/she has confirmed
+                            </li>
+                            <li>
+                                Product Manager ==> a CRUD system to let admin
+                                perform create, update, read and delete
+                                operations on products
+                            </li>
+                            <li>
+                                Stock Page ==> to let admin manage inventory of
+                                products + has name search filter
+                            </li>
+                            <li>
+                                All Orders Page ==> to let admin see all orders'
+                                summaries, and see individual orders' details on
+                                clicking
+                            </li>
+                            <li>
+                                Generate Report Page ==> to let admin generate
+                                tailored reports of orders according to search
+                                filters
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Modal footer -->
+                    <div
+                        class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600"
+                    >
+                        <button
+                            data-modal-hide="spellingBeeModal"
+                            type="button"
+                            id="close-SpellingHelperBtn"
+                            onclick="hideSpellingBeeDetail()"
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        >
+                            Close
+                        </button>
+                        <!-- <button data-modal-hide="staticModal" type="button" onclick="showAcademicProjects()" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Academic</button> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        const mobileMenu = document.getElementById("navbar-default");
+        const toggleMobileMenu = () => {
+            mobileMenu.classList.toggle("hidden");
+        };
+        const showPersonalProjects = () => {
+            const flex_projects = document.getElementById(
+                "flex-personal-projects"
+            );
+            const modal = document.getElementById("project-choice-modal");
+            flex_projects.classList.remove("hidden");
+            modal.classList.add("hidden");
+        };
+        const showAcademicProjects = () => {
+            const flex_projects = document.getElementById(
+                "flex-academic-projects"
+            );
+            const modal = document.getElementById("project-choice-modal");
+            flex_projects.classList.remove("hidden");
+            modal.classList.add("hidden");
+        };
+        const showHighwayRacersDetail = () => {
+            const modal = document.getElementById("highwayRacersModal");
+            modal.classList.remove("hidden");
+        };
+        const hideHighwayRacersDetail = () => {
+            const modal = document.getElementById("highwayRacersModal");
+            modal.classList.add("hidden");
+        };
+        const showSHMSDetail = () => {
+            const modal = document.getElementById("shmsModal");
+            modal.classList.remove("hidden");
+        };
+        const hideSHMSDetail = () => {
+            const modal = document.getElementById("shmsModal");
+            modal.classList.add("hidden");
+        };
+        const showLumsafarDetail = () => {
+            const modal = document.getElementById("LumsafarModal");
+            modal.classList.remove("hidden");
+        };
+        const hideLumsafarDetail = () => {
+            const modal = document.getElementById("LumsafarModal");
+            modal.classList.add("hidden");
+        };
+        const showA5bcDetail = () => {
+            const modal = document.getElementById("a5bcModal");
+            modal.classList.remove("hidden");
+        };
+        const hideA5bcDetail = () => {
+            const modal = document.getElementById("a5bcModal");
+            modal.classList.add("hidden");
+        };
+        const showRandomizerDetail = () => {
+            const modal = document.getElementById("fancyRandomizerModal");
+            modal.classList.remove("hidden");
+        };
+        const hideRandomizerDetail = () => {
+            const modal = document.getElementById("fancyRandomizerModal");
+            modal.classList.add("hidden");
+        };
+        const showSpellingBeeDetail = () => {
+            const modal = document.getElementById("spellingBeeModal");
+            modal.classList.remove("hidden");
+        };
+        const hideSpellingBeeDetail = () => {
+            const modal = document.getElementById("spellingBeeModal");
+            modal.classList.add("hidden");
+        };
+    </script>
 </html>

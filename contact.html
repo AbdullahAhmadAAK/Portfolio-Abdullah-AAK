@@ -1,152 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/998904c03c.js" crossorigin="anonymous"></script>
-    <style>
-      /* Cool underline effect for the heading */
-      .underline-cool {
-        position: relative;
-        display: inline-block;
-      }
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script
+            src="https://kit.fontawesome.com/998904c03c.js"
+            crossorigin="anonymous"
+        ></script>
+        <style>
+            /* Cool underline effect for the heading */
+            .underline-cool {
+                position: relative;
+                display: inline-block;
+            }
 
-      .underline-cool::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        background-color: #FFA500; /* Orange color */
-        bottom: -4px;
-        left: 0;
-        transform: scaleX(0);
-        transform-origin: bottom right;
-        transition: transform 0.3s ease-in-out;
-      }
+            .underline-cool::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 3px;
+                background-color: #ffa500; /* Orange color */
+                bottom: -4px;
+                left: 0;
+                transform: scaleX(0);
+                transform-origin: bottom right;
+                transition: transform 0.3s ease-in-out;
+            }
 
-      .underline-cool:hover::after {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-      }
+            .underline-cool:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+        </style>
+    </head>
+    <body
+        class="bg-green-200 relative"
+        style="
+            background: linear-gradient(
+                180deg,
+                #1e3d34,
+                #13412b,
+                #0e5621,
+                #007117
+            );
+        "
+    >
+        <nav
+            class="bg-green-600 border-gray-200 dark:bg-gray-900 absolute top-0 left-0 right-0 bg-gray-800 text-white p-4"
+        >
+            <div
+                class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+            >
+                <a href="index.html" class="flex items-center">
+                    <h1>AAK Tech</h1>
+                </a>
+                <button
+                    onclick="toggleMobileMenu()"
+                    data-collapse-toggle="navbar-default"
+                    type="button"
+                    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm bg-green-400 text-yellow-700 rounded-lg md:hidden hover:bg-green-500 hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                    aria-controls="navbar-default"
+                    aria-expanded="false"
+                >
+                    <span class="sr-only">Open main menu</span>
+                    <svg
+                        class="w-5 h-5"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 17 14"
+                    >
+                        <path
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M1 1h15M1 7h15M1 13h15"
+                        />
+                    </svg>
+                </button>
+                <div
+                    class="hidden w-full md:block md:w-auto"
+                    id="navbar-default"
+                >
+                    <ul
+                        class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700"
+                    >
+                        <li>
+                            <a
+                                href="index.html"
+                                class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0"
+                                >Home</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="about.html"
+                                class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0"
+                                >About</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="qualifications-experience.html"
+                                class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0"
+                                >Qualifications | Experience</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="projects.html"
+                                class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0"
+                                >Projects</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="contact.html"
+                                class="block py-2 pl-3 pr-4 md:p-0 md:text-yellow-300"
+                                aria-current="page"
+                                >Contact</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-    </style>
-  </head>
-  <body class="bg-green-200 relative" style="background: linear-gradient(180deg, #1E3D34, #13412B, #0E5621, #007117);">
-    
-    <nav class="bg-green-600 border-gray-200 dark:bg-gray-900 absolute top-0 left-0 right-0 bg-gray-800 text-white p-4">
-      <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <a href="index.html" class="flex items-center">
-            <h1>AAK Tech</h1>
-        </a>
-        <button onclick="toggleMobileMenu()" data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm bg-green-400 text-yellow-700 rounded-lg md:hidden hover:bg-green-500 hover:text-yellow-500 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-            </svg>
-        </button>
-        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 dark:border-gray-700">
-            <li>
-              <a href="index.html" class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0" >Home</a>
-            </li>
-            <li>
-              <a href="about.html" class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0">About</a>
-            </li>
-            <li>
-              <a href="qualifications-experience.html" class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0">Qualifications | Experience</a>
-            </li>
-            <li>
-              <a href="projects.html" class="block py-2 pl-3 pr-4 md:border-0 md:hover:text-yellow-300 md:p-0">Projects</a>
-            </li>
-            <li>
-              <a href="contact.html" class="block py-2 pl-3 pr-4 md:p-0 md:text-yellow-300" aria-current="page">Contact</a>
-            </li>
-          </ul>
+        <div class="flex flex-col items-center justify-evenly min-h-screen">
+            <div class="flex items-center justify-evenly space-x-20">
+                <div>
+                    <h1 class="text-4xl font-bold underline-cool text-teal-300">
+                        Contact Now
+                    </h1>
+                </div>
+
+                <div>
+                    <form
+                        class="max-w-md mx-auto p-4 bg-orange-500 rounded shadow-md"
+                        action="javascript:void(0)"
+                    >
+                        <div class="mb-4">
+                            <label for="name" class="block font-semibold mb-1"
+                                >Name:
+                            </label>
+                            <input
+                                type="text"
+                                name="name"
+                                id="name"
+                                class="w-full border px-3 py-2 rounded bg-yellow-200"
+                                placeholder="Enter your name"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block font-semibold mb-1"
+                                >Email:
+                            </label>
+                            <input
+                                type="text"
+                                name="email"
+                                id="email"
+                                class="w-full border px-3 py-2 rounded bg-yellow-200"
+                                placeholder="Enter your email"
+                            />
+                        </div>
+                        <div class="mb-4">
+                            <label
+                                for="message"
+                                class="block font-semibold mb-1"
+                                >Message</label
+                            >
+                            <textarea
+                                name="message"
+                                id="message"
+                                class="w-full border px-3 py-2 rounded bg-yellow-200"
+                                cols="90"
+                                rows="5"
+                                placeholder="Enter your message"
+                            ></textarea>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <button
+                                type="submit"
+                                id="submit-btn"
+                                class="w-24 bg-yellow-400 text-yellow-800 hover:bg-yellow-500 hover:text-yellow-900 font-semibold py-2 px-4 rounded transition-all duration-200"
+                                onclick="confirmFormSubmission()"
+                            >
+                                Submit
+                            </button>
+                            <p class="hidden" id="confirming-message">
+                                Email sent!
+                            </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="flex items-center justify-evenly gap-x-5">
+                <!-- copied aana chahye -->
+                <a href="https://www.fiverr.com/abdullahaak" target="_blank"
+                    ><img
+                        src="Media/fiverr_logo_w_trans (1).png"
+                        alt=""
+                        height="48px"
+                        width="48px"
+                /></a>
+                <a
+                    href="https://www.freelancer.com/u/AbdullahAhmadAAK"
+                    target="_blank"
+                    ><img
+                        src="Media/freelancer_logo.png"
+                        alt=""
+                        height="48px"
+                        width="48px"
+                /></a>
+                <a
+                    href="https://www.upwork.com/freelancers/~010df0d53c18e1f56d"
+                    target="_blank"
+                    ><img
+                        src="Media/upwork_logo.png"
+                        alt="upwork logo"
+                        height="48px"
+                        width="48px"
+                /></a>
+                <i
+                    class="fa-solid fa-envelope fa-3x cursor-pointer"
+                    onclick="copyEmail(this)"
+                ></i>
+                <div
+                    id="tooltip"
+                    class="hidden bg-gray-800 text-white p-2 rounded absolute transform -translate-y-2/3"
+                >
+                    Copied email!
+                </div>
+                <a href="https://github.com/AbdullahAhmadAAK" target="_blank"
+                    ><i class="fa-brands fa-square-github fa-3x"></i
+                ></a>
+                <a
+                    href="https://www.facebook.com/abdullahahmadaak"
+                    target="_blank"
+                    ><i class="fa-brands fa-square-facebook fa-3x"></i
+                ></a>
+                <a
+                    href="https://www.linkedin.com/in/abdullah-ahmad-70b1bb13b/"
+                    target="_blank"
+                    ><i class="fa-brands fa-linkedin fa-3x"></i
+                ></a>
+                <a href="https://www.instagram.com/aak_606/" target="_blank"
+                    ><i class="fa-brands fa-square-instagram fa-3x"></i
+                ></a>
+            </div>
         </div>
-      </div>
-    </nav>
+    </body>
+    <script>
+        const error_msg_element = document.getElementById("confirming-message");
+        const mobileMenu = document.getElementById("navbar-default");
+        // const emailLogoBtn = document.getElementById('')
+        const tooltip = document.getElementById("tooltip");
+        let submitBtn = document.getElementById("submit-btn");
+        const confirmFormSubmission = () => {
+            submitBtn.innerHTML = "&#x2713;";
+            error_msg_element.classList.remove("hidden");
+        };
+        const toggleMobileMenu = () => {
+            mobileMenu.classList.toggle("hidden");
+        };
+        const copyEmail = (emailLogoBtn) => {
+            navigator.clipboard.writeText("abdullahaak06@gmail.com");
+            tooltip.classList.remove("hidden");
+            setTimeout(() => {
+                tooltip.classList.add("hidden");
+            }, 1500);
 
-    <div class="flex flex-col items-center justify-evenly min-h-screen">
-      <div class="flex items-center justify-evenly space-x-20">
-        
-        <div>
-          <h1 class="text-4xl font-bold underline-cool text-teal-300">Contact Now</h1>
-        </div> 
-
-        <div>
-
-          <form class="max-w-md mx-auto p-4 bg-orange-500 rounded shadow-md" action="javascript:void(0)">
-            <div class="mb-4">
-              <label for="name" class="block font-semibold mb-1">Name: </label>
-              <input type="text" name="name" id="name" class="w-full border px-3 py-2 rounded bg-yellow-200" placeholder="Enter your name">
-            </div>
-            <div class="mb-4">
-              <label for="email" class="block font-semibold mb-1">Email: </label>
-              <input type="text" name="email" id="email" class="w-full border px-3 py-2 rounded bg-yellow-200" placeholder="Enter your email">
-            </div>
-            <div class="mb-4">
-              <label for="message" class="block font-semibold mb-1">Message</label>
-              <textarea name="message" id="message" class="w-full border px-3 py-2 rounded bg-yellow-200" cols="90" rows="5" placeholder="Enter your message"></textarea>
-            </div>
-            <div class="flex justify-between items-center">
-              <button type="submit" id="submit-btn" class="w-24 bg-yellow-400 text-yellow-800 hover:bg-yellow-500 hover:text-yellow-900 font-semibold py-2 px-4 rounded transition-all duration-200" onclick="confirmFormSubmission()">
-                Submit
-              </button>
-              <p class="hidden" id="confirming-message">Email sent!</p>
-            </div>
-          </form>
-          
-          
-        </div>
-      </div>
-      
-
-      <div class="flex items-center justify-evenly gap-x-5">
-        
-        <!-- copied aana chahye -->
-        <a href="https://www.fiverr.com/abdullahaak" target="_blank"><img src="Media/fiverr_logo_w_trans (1).png" alt="" height="48px" width="48px"></a>
-        <a href="https://www.freelancer.com/u/AbdullahAhmadAAK" target="_blank"><img src="Media/freelancer_logo.png" alt="" height="48px" width="48px"></a>
-        <a href="https://www.upwork.com/freelancers/~010df0d53c18e1f56d" target="_blank"><img src="Media/upwork_logo.png" alt="upwork logo" height="48px" width="48px"></a>
-        <i class="fa-solid fa-envelope fa-3x cursor-pointer" onclick="copyEmail(this)"></i>
-        <div id="tooltip" class="hidden bg-gray-800 text-white p-2 rounded absolute transform -translate-y-2/3">
-          Copied email!
-        </div>
-        <a href="https://github.com/AbdullahAhmadAAK" target="_blank"><i class="fa-brands fa-square-github fa-3x"></i></a>
-        <a href="https://www.facebook.com/abdullahahmadaak" target="_blank"><i class="fa-brands fa-square-facebook fa-3x"></i></a>
-        <a href="https://www.linkedin.com/in/abdullah-ahmad-70b1bb13b/" target="_blank"><i class="fa-brands fa-linkedin fa-3x"></i></a>
-        <a href="https://www.instagram.com/aak_606/" target="_blank"><i class="fa-brands fa-square-instagram fa-3x"></i></a>
-
-      </div>
-    </div>
-
-  </body>
-  <script>
-    const error_msg_element = document.getElementById("confirming-message");
-    const mobileMenu = document.getElementById('navbar-default');
-    // const emailLogoBtn = document.getElementById('')
-    const tooltip = document.getElementById('tooltip');
-    let submitBtn = document.getElementById('submit-btn');
-    const confirmFormSubmission = () => {
-      submitBtn.innerHTML = '&#x2713;';
-      error_msg_element.classList.remove("hidden");
-
-    }
-    const toggleMobileMenu = () => {
-      mobileMenu.classList.toggle('hidden');
-    }
-    const copyEmail = (emailLogoBtn) => {
-      navigator.clipboard.writeText("abdullahaak06@gmail.com");
-      tooltip.classList.remove('hidden');
-      setTimeout(() => {
-        tooltip.classList.add('hidden');
-      }, 1500);
-
-      // tippy(emailLogoBtn, {
-      //   content: 'Copied email!',
-      // });
-    }
-  </script>
+            // tippy(emailLogoBtn, {
+            //   content: 'Copied email!',
+            // });
+        };
+    </script>
 </html>
